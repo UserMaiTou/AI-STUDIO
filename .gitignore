@@ -1,0 +1,76 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.suo
+*.user
+*.userprefs
+
+# Logs and temp
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Build and generated outputs
+build/
+dist/
+out/
+bin/
+obj/
+coverage/
+
+# Node, if future tooling is added
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python, if future tooling is added
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Unity exclusions - AI-STUDIO is not a Unity project
+Assets/
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+ProjectSettings/
+Packages/
+
+# BlockCore / Gameplay exclusions
+BlockCore/
+**/BlockCore/
+Gameplay/
+**/Gameplay/
+GameRND/
+**/GameRND/
+
+# Large local artifacts
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
