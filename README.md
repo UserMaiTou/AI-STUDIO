@@ -40,6 +40,17 @@ Core contains project-neutral operating protocols:
 - Task template
 - Parking Lot
 
+## v1.1 Core Focus
+
+AI-STUDIO v1.1 adds project-neutral guardrails for:
+
+- session health checks and `STOP_AND_HANDOFF`
+- standard handoff packages
+- compact bootstrap prompts for new sessions
+- Phase 0 read-only review before implementation
+- objective validation by AI, scripts, tests, or checklists
+- role boundaries for Codex, Cursor, Claude, ChatGPT, and Human Director
+
 ## Mission Packs
 
 Mission Packs are delivery packages for specific workflows.

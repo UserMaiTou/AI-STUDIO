@@ -28,6 +28,8 @@ Mission Pack files are read only when the human assigns or reviews that Mission 
 - Chat context is not authority unless reflected in approved repository files.
 - Tools are capabilities, not authorities.
 - Executor and Reviewer are separate responsibilities.
+- Objective validation belongs to AI, scripts, tests, diffs, logs, or checklists whenever practical.
+- Human Review should focus on subjective judgment, direction, final authorization, and protected decisions.
 - Core must remain project-neutral.
 - Mission Packs are delivery packages, not Core.
 
@@ -71,12 +73,35 @@ Project-specific or workflow-specific content belongs in a Mission Pack, not Cor
 - Scope and out-of-scope boundaries must be explicit.
 - Allowed and forbidden files define the execution boundary.
 - Parking Lot items are not approved work.
+- New sessions begin with Phase 0 Read-Only Review unless Human explicitly authorizes implementation.
+- Session state must be tracked as `GREEN`, `YELLOW`, or `RED`.
+- `RED` session state requires `STOP_AND_HANDOFF`.
+- Checkpoint completion stops the current task flow; it must not automatically become the next task.
 - Handoffs should be concise, actionable, and repository-linked.
 - Reusable lessons from Mission Packs may be proposed for Core only after Human Review.
 
 ## Handoff Format
 
-Every handoff should include:
+Every handoff must include this standard package:
+
+```text
+SESSION_STATUS:
+CONTINUE_ALLOWED:
+STOP_REASON:
+CURRENT_REPO_STATE:
+CURRENT_TASK_STATE:
+NEXT_OWNER:
+NEXT_SESSION_NAME:
+NEXT_SESSION_GOAL:
+NEXT_SESSION_END_CONDITION:
+NEXT_SESSION_FIRST_PROMPT:
+```
+
+Full Handoff is for durable archival context.
+
+Compact Bootstrap is for a new session prompt and should be short enough to paste without dragging unnecessary history forward.
+
+Additional handoff detail may include:
 
 - current objective
 - completed work
@@ -86,6 +111,22 @@ Every handoff should include:
 - next recommended action
 
 Avoid long narrative recaps when a repository pointer is enough.
+
+## New Session Naming
+
+Use this format:
+
+```text
+[Repo/Project] [Version/Task] — [Purpose]
+```
+
+Examples:
+
+```text
+AI-STUDIO v1.1 — Scope Planning
+AI-STUDIO v1.1 — Core Patch
+Companion TASK-0006 — Vertical Slice Review
+```
 
 ## Pointers
 

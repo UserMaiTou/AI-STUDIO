@@ -59,6 +59,8 @@ The outer department `README.md` must not say that the team should use or return
 
 Every Department Pack must make AI role boundaries readable to the project team.
 
+Exported role guidance should stay aligned with `AGENTS.md` and `core/TOOL_ROUTING.md`.
+
 At minimum, it must explain:
 
 - ChatGPT: main brain, direction judgment, and Human decision support
