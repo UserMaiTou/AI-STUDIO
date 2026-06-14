@@ -1,6 +1,6 @@
 # RESKIN_OBSERVATION_LOG_TEMPLATE
 
-> Fill during a real reskin project validation run.
+> Supporting structure for AI-maintained observations during a real reskin project validation run.
 
 ---
 
@@ -67,3 +67,15 @@ Notes:
 ## Human Decisions Required
 
 Notes:
+
+---
+
+## Validation Coverage
+
+Objective checks completed:
+
+Objective checks skipped or blocked:
+
+Reason skipped or blocked:
+
+Human Review used for:

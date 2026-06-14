@@ -28,4 +28,8 @@ This draft is not a release gate.
 
 This draft does not authorize account, signing, privacy, advertising, or store-submission decisions.
 
-Use the observation and retrospective templates to collect evidence during a real project before deciding whether formal Domain rules are needed.
+AI records observations continuously and generates retrospective inputs during a real project before Human Director decides whether formal Domain rules are needed.
+
+AI should collect objective evidence whenever practical before asking Human Director for subjective judgment or protected decisions.
+
+Do not ask Human Director to manually catch objective issues that AI can reasonably check through files, diffs, builds, logs, scripts, or checklists.

@@ -1,6 +1,6 @@
 # RESKIN_RETROSPECTIVE_TEMPLATE
 
-> Fill after a real reskin project validation run.
+> Supporting structure for AI-generated retrospective inputs after a real reskin project validation run.
 
 ---
 
@@ -53,6 +53,26 @@ Notes:
 ## What Should Remain Project-Specific?
 
 Notes:
+
+---
+
+## Objective Validation
+
+Evidence collected:
+
+Checks that reduced Human Review load:
+
+Checks that should be added next time:
+
+---
+
+## Human Review And Escalations
+
+Human Review moments:
+
+Escalations raised:
+
+Escalations that should have been raised earlier:
 
 ---
 

@@ -6,7 +6,7 @@ No Agent may make final decisions on the topics below.
 
 ---
 
-## Must Escalate To Human Review
+## Must Escalate To Human Director
 
 - keystore
 - signing
@@ -25,7 +25,23 @@ No Agent may make final decisions on these topics.
 
 Agents may collect information, prepare options, draft checklists, or identify risks.
 
-Final decision remains with Human.
+AI should complete practical objective validation before escalating.
+
+Final decision remains with Human Director.
+
+---
+
+## Escalation Format
+
+```text
+Issue:
+Current evidence:
+Objective validation already checked:
+Options:
+Recommended option:
+Risk if delayed:
+Decision needed from Human Director:
+```
 
 ---
 

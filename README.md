@@ -55,9 +55,10 @@ AI-STUDIO v1.1 adds project-neutral guardrails for:
 
 Mission Packs are delivery packages for specific workflows.
 
-The first included Mission Pack is:
+Included Mission Packs:
 
 - Reskin_v1
+- GameRND_v1
 
 ## Collaboration Rules
 

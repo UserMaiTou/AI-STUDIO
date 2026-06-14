@@ -24,12 +24,13 @@ It does not authorize reskin work by itself.
 
 Use this packet only when Human has approved a real reskin project trial.
 
-The packet should help the project team observe:
+The packet should help the project team and AI observe:
 
 - which AI_STUDIO Core rules help
 - which Core rules do not fit reskin work
 - what future Domain guidance may be needed
 - what reusable Skills may be worth creating later
+- which objective validation checks can reduce unnecessary Human Review load
 
 ---
 
@@ -56,6 +57,10 @@ Tool is capability, not authority.
 Executor and Reviewer are separate responsibilities.
 
 No Agent may treat this packet as permission to perform account, signing, legal, privacy, advertising, or store-submission decisions.
+
+AI should handle objective validation with available files, diffs, scripts, builds, logs, checklists, and recorded evidence whenever practical before asking Human Director for judgment.
+
+Human Director should be asked for subjective judgment, protected decisions, final authorization, and risk acceptance.
 
 ---
 
