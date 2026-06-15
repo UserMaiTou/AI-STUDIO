@@ -4,6 +4,8 @@ AI-STUDIO is an AI-driven Product Development Operating System.
 
 It supports project governance, agent collaboration, tool routing, Mission Pack management, project experience recovery, and continuous optimization.
 
+Start here for AI sessions: read `core/SESSION_PROTOCOL.md` for the New Session Bootstrap before choosing task-specific files.
+
 ## What This Repository Is
 
 This repository contains the minimal independent AI-STUDIO operating rules and the first validated Mission Pack.

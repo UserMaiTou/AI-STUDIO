@@ -4,6 +4,8 @@
 
 This file defines tool-neutral routing for AI-STUDIO work.
 
+Responsibility: owns the work-type to Executor/Reviewer routing matrix; role authority boundaries remain governed by `AGENTS.md`.
+
 Tools provide capability. They do not provide authority.
 
 ## Core Principles

@@ -4,6 +4,8 @@
 
 This file defines the repository-driven session workflow for AI-STUDIO.
 
+Responsibility: owns session lifecycle, Phase 0, read order, checkpoint flow, and `STOP_AND_HANDOFF` triggers.
+
 The goal is to prevent chat-only context, preserve useful project memory, and keep AI-STUDIO work reviewable across sessions.
 
 ## Source of Truth

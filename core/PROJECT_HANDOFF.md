@@ -4,6 +4,8 @@
 
 This file provides stable handoff context for AI-STUDIO.
 
+Responsibility: owns the handoff/bootstrap artifact specification, including the 10-field standard package, full handoff, compact bootstrap, and session naming.
+
 AI-STUDIO is an AI-driven Product Development Operating System for product outcomes, Mission Pack execution, Tool Routing, Knowledge Recovery, and continuous optimization.
 
 This file is not a project history dump, task log, implementation plan, or parallel authority.
