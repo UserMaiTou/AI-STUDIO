@@ -14,6 +14,10 @@ Items in this file:
 
 The goal is to preserve potentially valuable ideas without polluting active Core rules, Mission Pack execution, or current task scope.
 
+Internal-only note:
+Parking Lot is internal roadmap and deferred strategy material.
+It must not be included in external packages, friends training packages, department exports, or sanitized `AI_MISSION/` exports unless Human explicitly approves.
+
 ## Rules
 
 ### PL-RULE-001

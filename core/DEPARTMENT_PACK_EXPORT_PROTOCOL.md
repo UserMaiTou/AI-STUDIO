@@ -116,15 +116,21 @@ Mission Pack subfolders are part of the returned `AI_MISSION/` package.
 
 Department Pack zip files must not include:
 
+Windows example exclusions:
+
 - `D:\AI\AI-STUDIO`
 - `D:\AI\AI-STUDIO\.git`
 - `D:\AI\.git`
+
+General exclusions:
+
+- `core/PARKING_LOT.md` or internal roadmap material unless Human explicitly approves
 - other department packages
 - temporary files
 - cache files
 - system files
 
-The recommended package root is the department folder being delivered, not `D:\AI`.
+The recommended package root is the department folder being delivered, not a broad workspace root such as `D:\AI`.
 
 Before export, inspect the package tree and confirm the zip boundary.
 
