@@ -246,3 +246,36 @@ Status: PARKING_LOT_FIRST / DO_NOT_ADD_FOR_NOW
 Decision: Do not add root `AI_CONTEXT_GUIDE.md` for now because README and `core/SESSION_PROTOCOL.md` already cover startup navigation.
 Risk: Avoid duplicate bootstrap truth, maintenance drift, extra root entrypoints, and mini-Core expansion.
 Future candidate: If cold-start pain persists, prefer adding a one-line Start Here pointer in `README.md` to `core/SESSION_PROTOCOL.md` New Session Bootstrap, rather than creating a new root `AI_CONTEXT_GUIDE.md`.
+
+### PL-0008 - Department export bootstrap drift
+
+Status: Parked
+
+Priority: P3
+
+Reason:
+Department export packages currently contain duplicate bootstrap/read-order surfaces:
+
+- `START_HERE.md`
+- `core/SESSION_PROTOCOL.md`
+
+Observed drift:
+Both `D:\AI\研发部` and `D:\AI\换皮部` show the same low-severity bootstrap drift:
+
+- `START_HERE.md` lists `core/SESSION_PROTOCOL.md` but not `PROJECT_CONTEXT`.
+- `core/SESSION_PROTOCOL.md` lists `PROJECT_CONTEXT` but not itself.
+
+Current action:
+Do not edit exported department folders now.
+
+Blocker:
+The department package source-of-truth / generation path is unclear.
+
+Future target:
+Option C, pending source-of-truth decision:
+
+- `START_HERE.md` should be a short human-facing entry.
+- department `core/SESSION_PROTOCOL.md` should own the canonical read order.
+
+Export note:
+Keep this item internal-only. Do not include it in external packages, department exports, or sanitized export packages unless Human explicitly approves.
