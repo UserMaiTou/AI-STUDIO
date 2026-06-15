@@ -96,6 +96,37 @@ For R&D and other project-repository-based Department Packs:
 
 When project-local instructions conflict with a Department Pack, escalate before acting.
 
+## Source Map / Manifest Expectations
+
+Exported Department Packs are field copies and feedback inputs.
+
+They are not canonical AI-STUDIO source.
+
+At export review time, each pack should have enough source-map or manifest information to explain where exported content came from and how returned changes should be reviewed.
+
+This protocol does not require creating a new manifest file yet.
+
+A source map may classify exported files or file groups by directionality:
+
+- `canonical -> export`: copied or adapted from AI-STUDIO canonical source
+- `export-only`: created only to make the delivered pack usable
+- `department-authored / no canonical source yet`: created for the department pack with no approved canonical source
+- `bidirectional-needs-review`: may return useful changes, but must be reviewed before any upstream adoption
+
+Minimum source-map fields or categories:
+
+- exported path
+- directionality classification
+- canonical source path, or `none yet`
+- export purpose
+- expected return-review gate
+
+Future canonical department templates may be considered later after Human Review.
+
+Do not create canonical department templates in this task.
+
+Export generator scripts remain out of scope.
+
 ## Return Scope Rule
 
 At project completion, the team must return the entire:
@@ -111,6 +142,21 @@ Do not ask the team to return only:
 - any single Mission Pack subfolder
 
 Mission Pack subfolders are part of the returned `AI_MISSION/` package.
+
+## Return Feedback Review
+
+Returned Department Pack or friend-package content is feedback input.
+
+It must not auto-merge into AI-STUDIO, Core, Mission Packs, templates, tools, or future exports.
+
+Returned changes must be reviewed by Human Director before they become canonical source, reusable protocol, or future export content.
+
+Review should identify:
+
+- what changed in the returned package
+- whether the change is project-specific, department-specific, or generally reusable
+- whether the change should remain feedback only
+- whether a follow-up task is needed before any AI-STUDIO source edit
 
 ## Packaging Safety Rules
 
