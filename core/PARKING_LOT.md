@@ -60,6 +60,11 @@ Candidate skills:
 - retrospective analysis
 - task planning
 
+Authorization note:
+v1.1.1 is Human-approved to implement only the handoff preparation sub-item as a minimal executable tool.
+
+This does not approve the full Skill Layer, Agent OS, CI/hooks, Runtime Probe, benchmark system, or any automatic commit/push workflow.
+
 Gate:
 Revisit after several real tasks use `PROJECT_HANDOFF` and `TOOL_ROUTING`.
 
@@ -155,3 +160,79 @@ Evaluation criteria:
 
 Gate:
 Review only after meaningful repository milestones.
+
+### PL-0006 - AI-Operated Department Model
+
+Status: Parked
+
+Priority: P1
+
+Reason:
+This is one of AI-STUDIO's long-term directions.
+
+Current focus should remain on real project validation now that AI_MISSION v1 is frozen, rather than continuing to expand organizational architecture.
+
+Without real project evidence, this should not enter implementation.
+
+Description:
+Long-term target:
+
+```text
+Human Director
+↓
+AI-STUDIO
+↓
+Department Lead
+↓
+Specialized AI Agents
+```
+
+Principle:
+This is not about replacing people with AI.
+
+It is about:
+
+```text
+1 experienced human
++
+multiple AI Agents
+```
+
+forming a high-efficiency project department.
+
+Goal:
+Reduce department dependence on a large number of execution personnel.
+
+Possible future evolution:
+
+Phase 1:
+AI records experience.
+
+Status: Completed.
+
+Phase 2:
+AI bootstraps projects.
+
+Phase 3:
+AI assigns specialist agents.
+
+Phase 4:
+AI executes most workflow steps.
+
+Human responsibility remains:
+
+- strategic decisions
+- resource allocation
+- risk acceptance
+- final approval
+
+Key Question:
+Which work can be safely transferred from people to AI without reducing project quality?
+
+Gate:
+Wait for at least:
+
+- reskin project #1 completed and returned with AI_MISSION
+- R&D project #1 completed and returned with AI_MISSION
+
+Re-evaluate only after real project analysis is complete.
