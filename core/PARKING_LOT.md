@@ -236,3 +236,9 @@ Wait for at least:
 - R&D project #1 completed and returned with AI_MISSION
 
 Re-evaluate only after real project analysis is complete.
+
+### PL-0007 - Cold-start navigation: README Start Here pointer vs dedicated AI_CONTEXT_GUIDE.md
+Status: PARKING_LOT_FIRST / DO_NOT_ADD_FOR_NOW
+Decision: Do not add root `AI_CONTEXT_GUIDE.md` for now because README and `core/SESSION_PROTOCOL.md` already cover startup navigation.
+Risk: Avoid duplicate bootstrap truth, maintenance drift, extra root entrypoints, and mini-Core expansion.
+Future candidate: If cold-start pain persists, prefer adding a one-line Start Here pointer in `README.md` to `core/SESSION_PROTOCOL.md` New Session Bootstrap, rather than creating a new root `AI_CONTEXT_GUIDE.md`.
