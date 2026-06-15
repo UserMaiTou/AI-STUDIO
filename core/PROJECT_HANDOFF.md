@@ -12,16 +12,9 @@ This file is not a project history dump, task log, implementation plan, or paral
 
 ## Read First
 
-For a new session in this repository, read:
+For new-session read order, use `core/SESSION_PROTOCOL.md` / `New Session Bootstrap`.
 
-1. `README.md`
-2. `AGENTS.md`
-3. `core/PROJECT_HANDOFF.md`
-4. `core/TOOL_ROUTING.md`
-5. `core/PARKING_LOT.md`
-6. `core/TASK_TEMPLATE.md`, when a task needs structured execution
-
-Mission Pack files are read only when the human assigns or reviews that Mission Pack.
+This file intentionally points to that canonical bootstrap order instead of duplicating it.
 
 ## Authority Principles
 
