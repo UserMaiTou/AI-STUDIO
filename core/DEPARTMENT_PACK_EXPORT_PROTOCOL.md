@@ -121,11 +121,30 @@ Minimum source-map fields or categories:
 - export purpose
 - expected return-review gate
 
-Future canonical department templates may be considered later after Human Review.
+## Canonical Department Template Source
 
-Do not create canonical department templates in this task.
+Canonical templates for department-pack scaffold surfaces live in the top-level
+`department_templates/` directory (Human-approved; see PL-0010 in
+`core/PARKING_LOT.md`). It is the source side of a `canonical -> export`
+relationship, mirroring how `mission_packs/` is the canonical source for Mission
+Pack content. It is not an exported pack, a field copy, generator output, or a
+manifest.
 
-Export generator scripts remain out of scope.
+Directionality of the standard `AI_MISSION/` surfaces:
+
+- `canonical -> export` from `department_templates/AI_MISSION/`: `START_HERE.md`,
+  `core/AI_ROLE_ROUTING.md`, `core/SESSION_PROTOCOL.md` (a department-facing
+  template — a controlled derivation of the repo's own `core/SESSION_PROTOCOL.md`,
+  distinct from and not a replacement for it), and the eight `PROJECT_*` records.
+- `canonical -> export` from AI-STUDIO `core/` / root at export time (not stored in
+  `department_templates/`): `core/TOOL_ROUTING.md`, `core/PROJECT_HANDOFF.md`, and
+  the department-adapted `AGENTS.md`.
+- No standard `AI_MISSION/` surface remains `department-authored / no canonical
+  source yet`. A filled `PROJECT_*` record in a delivered pack is a field copy and
+  is `bidirectional-needs-review` for any returned change.
+
+Export generator scripts remain out of scope. Department-pack export resolves
+template placeholders by the documented manual procedure, not a generator.
 
 ## Return Scope Rule
 

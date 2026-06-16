@@ -27,15 +27,24 @@ duplicated here:
 
 - `core/TOOL_ROUTING.md` and `core/PROJECT_HANDOFF.md` are copied from the
   AI-STUDIO canonical `core/` at export time, not stored here.
-- `core/SESSION_PROTOCOL.md` is **not** stored here. The canonical session
-  protocol remains `core/SESSION_PROTOCOL.md`, and AI-STUDIO does not maintain a
-  second, forked SESSION_PROTOCOL source. How the department-facing variant should
-  be produced is currently under Human review (see "Sanitize-on-export" below).
+- `core/SESSION_PROTOCOL.md` (the AI-STUDIO repo's own session protocol) is **not**
+  stored here and is not replaced. The department-facing session protocol is a
+  **separate exported-surface template** at `AI_MISSION/core/SESSION_PROTOCOL.md`
+  (see "Current contents" and "Department session protocol" below): a controlled
+  derivation informed by `core/SESSION_PROTOCOL.md` that explicitly owns
+  department-pack concerns. The two are distinct canonical sources for distinct
+  scopes (the repo vs a deployed pack), not a fork of one file.
 
 ## Current contents
 
 - `AI_MISSION/core/AI_ROLE_ROUTING.md` — canonical role-routing template, aligned
   to the Claude-primary model (`AGENTS.md`, `core/TOOL_ROUTING.md`).
+- `AI_MISSION/core/SESSION_PROTOCOL.md` — department-facing session-protocol
+  template (parameterized: `{{DEPARTMENT_NAME}}` / `{{WORK_ADJECTIVE}}` /
+  `{{MISSION_PACK_DIR}}` / `{{MISSION_PACK_PROHIBITED_DECISIONS}}`). A controlled
+  derivation of the repo's `core/SESSION_PROTOCOL.md` — distinct from and not a
+  replacement for it; owns project-local `AI_STUDIO/` precedence, Mission Pack
+  Rules, and project completion return.
 - `AI_MISSION/START_HERE.md` — canonical, department-neutral entry template with a
   Claude-primary launch flow and `<DepartmentName>` / `<ProjectKind>` /
   `<MissionPack_v1>` placeholders.
@@ -45,40 +54,39 @@ duplicated here:
   — blank record templates (project-data-free; byte-faithful to the deployed field
   forms, which were already model-neutral blanks).
 
-## Sanitize-on-export (SESSION_PROTOCOL) — under Human review
+## Department session protocol (resolved: option A)
 
-The original intent was a simple manual transform: take canonical
-`core/SESSION_PROTOCOL.md`, drop internal-only pointers (e.g. the
-`core/PARKING_LOT.md` read-order entry), and ship the rest.
+The department-facing `AI_MISSION/core/SESSION_PROTOCOL.md` is NOT produced by a
+sanitize-only transform of the repo's `core/SESSION_PROTOCOL.md`. A read-only
+investigation of the deployed field packs found the department variant is not a
+sanitized subset of canonical: it carries department-authored content with no
+canonical equivalent (project-local `AI_STUDIO/`-precedence Source-of-Truth, a
+Project Completion Return section, department Mission Pack Rules, and extra
+bootstrap / validation entries) while omitting several repo-only sections. A
+sanitize-from-canonical would be lossy in both directions.
 
-A read-only investigation of the deployed field packs found this is not viable as
-a pure transform: the department `SESSION_PROTOCOL.md` is **not** a sanitized
-subset of canonical. It carries department-authored content with no canonical
-equivalent — a project-local `AI_STUDIO/`-precedence Source-of-Truth section, a
-"Project Completion Return" section, department-specific Mission Pack Rules, and
-extra bootstrap / validation entries — while omitting several canonical sections.
-A sanitize-from-canonical would therefore be lossy in both directions.
+Per Human Director decision (option A), the department session protocol is its own
+canonical exported-surface template here — informed by `core/SESSION_PROTOCOL.md`
+for the shared spine (Phase 0, session health, `STOP_AND_HANDOFF`, validation) and
+owning the department-pack-specific sections. To keep this a **controlled**
+derivation rather than an uncontrolled fork:
 
-This is an open fork escalated to the Human Director (see PL-0010 in
-`core/PARKING_LOT.md`). Two options:
+- `core/SESSION_PROTOCOL.md` remains the canonical protocol for the AI-STUDIO repo;
+  the template here is canonical only for the exported Department Pack surface.
+- The template's header states its scope and its relationship to the repo protocol.
+- It does not contradict the repo protocol's shared spine; where it differs, the
+  difference is a documented field-deployment-scope concern.
 
-- A — author a parameterized department-facing SESSION_PROTOCOL template here
-  (informed by canonical but owning the department sections); this creates the
-  forked source the no-fork decision aimed to avoid.
-- B — keep the no-fork decision and leave the department SESSION_PROTOCOL classed
-  `department-authored / no canonical source yet` (not canonicalized).
+No generator is used; placeholders are resolved by the documented manual export.
 
-No SESSION_PROTOCOL source is created here pending that decision. No generator is
-implied either way.
+## Status
 
-## Human-gated follow-ups
-
-- SESSION_PROTOCOL: resolve the sanitize-on-export fork above (Human decision A/B).
-- Source Map: once a surface has a canonical template here, the export protocol's
-  Source Map (`core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md`) should reclassify it from
-  `department-authored / no canonical source yet` to `canonical -> export`. Editing
-  that Core protocol file is Human-gated (PL-0010 Finding 3), so it is deferred to
-  a Human-approved step (bundled with the SESSION_PROTOCOL decision).
+All department-pack scaffold surfaces that previously had no canonical home now
+have a canonical template here: `START_HERE.md`, `core/AI_ROLE_ROUTING.md`,
+`core/SESSION_PROTOCOL.md`, and the eight `PROJECT_*` records. The export
+protocol's Source Map (`core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md`) classifies these
+as `canonical -> export`; no department-pack surface remains
+`department-authored / no canonical source yet`.
 
 ## Field-pack reconciliation (next Human-approved export only)
 
@@ -92,8 +100,9 @@ export, regenerate from these canonical templates:
    ChatGPT-decision-support / Human-final.
 2. `START_HERE.md` — Claude-primary launch flow ("Open Claude"), resolved
    placeholders, and the explicit `AI maintains:` record list.
-3. `core/SESSION_PROTOCOL.md` — produced per the resolved sanitize-on-export
-   decision; keep `core/PARKING_LOT.md` out of the field read order.
+3. `core/SESSION_PROTOCOL.md` — regenerate from the department-facing
+   `core/SESSION_PROTOCOL.md` template (resolve the placeholders). The template
+   already keeps `core/PARKING_LOT.md` out of the field read order.
 4. `PROJECT_*` records — match the blank canonical structure; preserve any real
    project DATA already in a deployed pack (structure reconcile, not data wipe);
    returned content is feedback, reviewed before any upstream adoption.
