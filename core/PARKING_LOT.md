@@ -341,13 +341,15 @@ Precision: `core/SESSION_PROTOCOL.md` IS canonical and tracked; only the exporte
 
 Risk: with no upstream copy, a returned / field pack can become the de-facto canonical for these surfaces — the "accidental canonical" the protocol warns against (`core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md:101-104`). Overlaps PL-0008 (department source-of-truth drift).
 
-Finding 2 - Export protocol role/tool routing is internally inconsistent (Human-gated):
-`core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md:62` says exported role guidance "should stay aligned with `AGENTS.md` and `core/TOOL_ROUTING.md`", but its own "AI Role Routing Requirement" (`:58-74`) and "Tool Routing Requirement" (`:76-86`) still describe the pre-2G model (ChatGPT main brain, Codex orchestration, Cursor execution, Claude second-opinion). The post-2G canonical now contradicts this (`AGENTS.md:61-62`, `core/TOOL_ROUTING.md:39-40`: Claude primary, Codex advisory). So the file's alignment instruction is internally violated.
+Finding 2 - Export protocol role/tool routing aligned to Claude-primary (RESOLVED):
+`core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md:62` says exported role guidance "should stay aligned with `AGENTS.md` and `core/TOOL_ROUTING.md`". The "AI Role Routing Requirement" (`:58-74`) and "Tool Routing Requirement" (`:76-86`) previously described the pre-2G model (ChatGPT main brain, Codex orchestration, Cursor execution, Claude second-opinion), contradicting the post-2G canonical (`AGENTS.md:61-62`, `core/TOOL_ROUTING.md:39-40`: Claude primary, Codex advisory).
 
-Disposition: ESCALATE. Editing these sections changes export semantics and the operating model as presented to field teams — a stop-and-ask trigger — and is already fenced out of scope by PL-0009 (`:312-313`). Do not edit until explicit Human Review.
+Disposition: RESOLVED — Human Director approved alignment (Choice A). The two sections were updated to reflect the established Claude-primary / Codex-advisory model (reflecting the already-established operating model, not inventing a new field-team model). The PL-0009 (`:312-313`) out-of-scope fence on this specific alignment is lifted by this explicit Human decision.
 
 Finding 3 - Department template home decision (reserved):
 The protocol defers canonical department templates (`core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md:124-128`) without naming a home. A candidate top-level name (e.g. `department_templates/`) has been discussed but is RESERVED for Human decision: naming or creating a top-level template home is an architecture decision (stop-and-ask) and must not be inscribed into Core or created autonomously. Overlaps PL-0004 (layered architecture) and PL-0008.
+
+Status: Human Director is leaning toward confirming a canonical department template home (possibly `department_templates/`) but requested an architecture recommendation first. Do NOT create the directory, templates, manifest, generator, or export automation yet.
 
 Minor staleness follow-ups (low priority):
 - `README.md:57` still enumerates role boundaries in pre-2G order (Codex, Cursor, Claude, ChatGPT) — role-drift echo; Human-gated, do not silently rewrite role framing.
@@ -355,7 +357,7 @@ Minor staleness follow-ups (low priority):
 - `core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md` is absent from the New Session Bootstrap read order (`core/SESSION_PROTOCOL.md:21-28`) and the `core/PROJECT_HANDOFF.md` Pointers table — plausibly intentional (export-time / specialist file); recorded for awareness, not flagged as a defect.
 
 Gate:
-Findings 2 and 3 require explicit Human Review before any `core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md` role / tool / template edit. Finding 1 and the README role / Bootstrap-Status items may be actioned only via separate Human-approved tasks.
+Finding 2 is RESOLVED by Human Choice A (role/tool-routing alignment). Finding 3 still requires explicit Human Review before any `core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md` template edit or directory creation. Finding 1 and the README role / Bootstrap-Status items may be actioned only via separate Human-approved tasks.
 
 Export note:
 Keep this item internal-only. Do not include it in external packages, friends training packages, department exports, or sanitized `AI_MISSION/` exports unless Human explicitly approves.

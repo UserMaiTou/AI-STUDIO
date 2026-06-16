@@ -63,10 +63,10 @@ Exported role guidance should stay aligned with `AGENTS.md` and `core/TOOL_ROUTI
 
 At minimum, it must explain:
 
-- ChatGPT: main brain, direction judgment, and Human decision support
-- Codex: task breakdown, repository orchestration, diff review, run summary, and checkpoint judgment
-- Cursor: execution edits, code, configuration, assets, and batch file processing
-- Claude: complex review, long-context retrospective, risk check, and second opinion
+- Claude: primary daily repo execution interface and project lead, via scoped subagents (implementation, read-only review, boundary checking, risk review); Executor, not final Reviewer
+- Codex: advisory / second-opinion only — task breakdown input, repository-state sanity, and commit recommendation
+- Cursor: implementation execution for code, configuration, assets, and batch file processing, when assigned
+- ChatGPT: Human Director decision support, direction judgment, and strategy discussion
 - Human Director: final decisions, account, signing, privacy, advertising, store submission, commit, push, and release authorization
 
 These roles are routing guidance, not permanent authority.
@@ -77,11 +77,11 @@ Human Final Decision remains the highest authority.
 
 Every Department Pack must explain tool routing for common execution cases:
 
-- simple batch modification: Cursor Composer
-- complex code, multi-file refactor, difficult bug: Cursor GPT-5.5
-- task breakdown, acceptance criteria, review, run summary: Codex
-- complex plan retrospective, long-document review, risk review: Claude
-- direction discussion, strategy judgment, next-stage decision: ChatGPT
+- complex code, multi-file refactor, difficult bug, execution planning, repo hygiene: Claude (primary execution interface / project lead, via scoped subagents)
+- simple batch modification, assets, code/configuration execution when assigned: Cursor
+- task breakdown input, repository-state sanity, commit recommendation, second opinion: Codex (advisory only)
+- complex plan retrospective, long-document review, risk review, boundary checking: Claude (read-only subagents; final review authority remains Human)
+- direction discussion, strategy judgment, next-stage decision: ChatGPT (Human Director decision support)
 
 Tool routing must not authorize scope expansion or protected decisions.
 
