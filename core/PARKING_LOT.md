@@ -279,3 +279,42 @@ Option C, pending source-of-truth decision:
 
 Export note:
 Keep this item internal-only. Do not include it in external packages, department exports, or sanitized export packages unless Human explicitly approves.
+
+### PL-0009 - Claude-centered workflow migration
+
+Status: Parked
+
+Priority: P2
+
+Reason:
+A Phase 2F0 read-only planning review considered shifting AI-STUDIO from the current multi-tool workflow (ChatGPT direction, Codex execution/records, Cursor implementation, Claude read-only review) toward a Claude-centered workflow where Claude Code becomes the primary daily repo interface / project lead with subagents for implementation, review, boundary checking, docs consistency, and risk review.
+
+This overlaps existing parked items and must not be implemented now:
+
+- It is substantially the AI-Operated Department Model already parked as PL-0006.
+- It extends the Agent OS direction intentionally excluded by PL-0001.
+- It depends on the unresolved department source-of-truth / generation path noted in PL-0008.
+
+Not approved:
+Claude-centered workflow migration is not approved for implementation.
+
+This item records the discussion only. It does not authorize role changes, new directories, new tools, or any automated commit/push workflow.
+
+Out of scope until explicit Human Review:
+
+- creating `.claude/` or `.claude/agents`
+- creating or modifying Claude settings
+- editing role-routing content in `AGENTS.md` or `core/TOOL_ROUTING.md`
+- editing exported role-routing content in department packs
+
+Gates:
+
+1. Resolve Phase 2F / PL-0008 canonical home for department core / `START_HERE.md` first.
+2. Meet the PL-0006 real-project return-evidence gate (reskin project #1 and R&D project #1 completed and returned with `AI_MISSION/`) before any AI-operated department model or Claude-centered workflow migration.
+3. No `.claude/agents`, Claude settings, role-routing edits, or export-role edits until explicit Human Review.
+
+Disposition:
+Human Final Decision remains the highest authority. Git and the Human Gate remain hard sources of truth. Commit, push, and export-package changes remain Human-approved.
+
+Export note:
+Keep this item internal-only. Do not include it in external packages, friends training packages, department exports, or sanitized `AI_MISSION/` exports unless Human explicitly approves.
