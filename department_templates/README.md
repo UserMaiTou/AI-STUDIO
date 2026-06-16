@@ -95,7 +95,7 @@ content. Do NOT edit deployed packs directly. At each pack's next Human-approved
 export, regenerate from these canonical templates:
 
 1. `core/AI_ROLE_ROUTING.md` and `AGENTS.md` — realign from pre-2G
-   (ChatGPT main brain / Codex orchestration / Cursor GPT-5.5 / Claude
+   (ChatGPT main brain / Codex orchestration / Cursor heavy execution / Claude
    second-opinion) to Claude-primary / Codex-advisory / Cursor-when-assigned /
    ChatGPT-decision-support / Human-final.
 2. `START_HERE.md` — Claude-primary launch flow ("Open Claude"), resolved
