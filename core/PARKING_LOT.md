@@ -354,7 +354,7 @@ The protocol defers canonical department templates (`core/DEPARTMENT_PACK_EXPORT
 Status (2026-06-16): Human Director confirmed the canonical home decisions — top-level `department_templates/`; SESSION_PROTOCOL uses sanitize-on-export (no forked source; canonical stays `core/SESSION_PROTOCOL.md`). A minimal home was created: `department_templates/README.md` + `department_templates/AI_MISSION/core/AI_ROLE_ROUTING.md` (Claude-primary). START_HERE, the eight PROJECT_* templates, and the full sanitize-transform spec are documented follow-ups in `department_templates/README.md`. Still no generator, manifest, automation, or zip; deployed field packs not edited. Anything resembling a template engine / manifest system / export automation requires fresh Human Review.
 
 Minor staleness follow-ups (low priority):
-- `README.md:58` still enumerates role boundaries in pre-2G order (Codex, Cursor, Claude, ChatGPT) — role-drift echo; Human-gated, do not silently rewrite role framing.
+- `README.md:58` role-summary enumeration aligned to lead with Claude (canonical `AGENTS.md` order); pre-2G ordering echo resolved by Human-approved README role-summary alignment.
 - `README.md` "Bootstrap Status" (`:79-87`) reads as initial-bootstrap aspiration and is now historically stale.
 - `core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md` is absent from the New Session Bootstrap read order (`core/SESSION_PROTOCOL.md:21-28`) and the `core/PROJECT_HANDOFF.md` Pointers table — plausibly intentional (export-time / specialist file); recorded for awareness, not flagged as a defect.
 

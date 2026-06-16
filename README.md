@@ -55,7 +55,7 @@ AI-STUDIO v1.1 adds project-neutral guardrails for:
 - compact bootstrap prompts for new sessions
 - Phase 0 read-only review before implementation
 - objective validation by AI, scripts, tests, or checklists
-- role boundaries for Codex, Cursor, Claude, ChatGPT, and Human Director
+- role boundaries for Claude, Codex, Cursor, ChatGPT, and Human Director
 
 ## Mission Packs
 
