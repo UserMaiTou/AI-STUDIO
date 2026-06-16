@@ -27,6 +27,7 @@ AI-STUDIO is not:
 ```text
 .claude/
 core/
+department_templates/
 mission_packs/
 tools/
 AGENTS.md

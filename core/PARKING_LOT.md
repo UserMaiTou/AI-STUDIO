@@ -341,6 +341,8 @@ Precision: `core/SESSION_PROTOCOL.md` IS canonical and tracked; only the exporte
 
 Risk: with no upstream copy, a returned / field pack can become the de-facto canonical for these surfaces — the "accidental canonical" the protocol warns against (`core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md:101-104`). Overlaps PL-0008 (department source-of-truth drift).
 
+Status (2026-06-16): `core/AI_ROLE_ROUTING.md` now has a canonical source at `department_templates/AI_MISSION/core/AI_ROLE_ROUTING.md` (see Finding 3). `START_HERE.md` and the eight `AI_MISSION/PROJECT_*` records remain follow-ups (canonical templates not yet authored). The exported/sanitized `SESSION_PROTOCOL` is handled by sanitize-on-export from canonical `core/SESSION_PROTOCOL.md`, not by a stored source.
+
 Finding 2 - Export protocol role/tool routing aligned to Claude-primary (RESOLVED):
 `core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md:62` says exported role guidance "should stay aligned with `AGENTS.md` and `core/TOOL_ROUTING.md`". The "AI Role Routing Requirement" (`:58-74`) and "Tool Routing Requirement" (`:76-86`) previously described the pre-2G model (ChatGPT main brain, Codex orchestration, Cursor execution, Claude second-opinion), contradicting the post-2G canonical (`AGENTS.md:61-62`, `core/TOOL_ROUTING.md:39-40`: Claude primary, Codex advisory).
 
@@ -349,15 +351,15 @@ Disposition: RESOLVED — Human Director approved alignment (Choice A). The two 
 Finding 3 - Department template home decision (reserved):
 The protocol defers canonical department templates (`core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md:124-128`) without naming a home. A candidate top-level name (e.g. `department_templates/`) has been discussed but is RESERVED for Human decision: naming or creating a top-level template home is an architecture decision (stop-and-ask) and must not be inscribed into Core or created autonomously. Overlaps PL-0004 (layered architecture) and PL-0008.
 
-Status: Human Director is leaning toward confirming a canonical department template home (possibly `department_templates/`) but requested an architecture recommendation first. Do NOT create the directory, templates, manifest, generator, or export automation yet.
+Status (2026-06-16): Human Director confirmed the canonical home decisions — top-level `department_templates/`; SESSION_PROTOCOL uses sanitize-on-export (no forked source; canonical stays `core/SESSION_PROTOCOL.md`). A minimal home was created: `department_templates/README.md` + `department_templates/AI_MISSION/core/AI_ROLE_ROUTING.md` (Claude-primary). START_HERE, the eight PROJECT_* templates, and the full sanitize-transform spec are documented follow-ups in `department_templates/README.md`. Still no generator, manifest, automation, or zip; deployed field packs not edited. Anything resembling a template engine / manifest system / export automation requires fresh Human Review.
 
 Minor staleness follow-ups (low priority):
-- `README.md:57` still enumerates role boundaries in pre-2G order (Codex, Cursor, Claude, ChatGPT) — role-drift echo; Human-gated, do not silently rewrite role framing.
-- `README.md` "Bootstrap Status" (`:78-86`) reads as initial-bootstrap aspiration and is now historically stale.
+- `README.md:58` still enumerates role boundaries in pre-2G order (Codex, Cursor, Claude, ChatGPT) — role-drift echo; Human-gated, do not silently rewrite role framing.
+- `README.md` "Bootstrap Status" (`:79-87`) reads as initial-bootstrap aspiration and is now historically stale.
 - `core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md` is absent from the New Session Bootstrap read order (`core/SESSION_PROTOCOL.md:21-28`) and the `core/PROJECT_HANDOFF.md` Pointers table — plausibly intentional (export-time / specialist file); recorded for awareness, not flagged as a defect.
 
 Gate:
-Finding 2 is RESOLVED by Human Choice A (role/tool-routing alignment). Finding 3 still requires explicit Human Review before any `core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md` template edit or directory creation. Finding 1 and the README role / Bootstrap-Status items may be actioned only via separate Human-approved tasks.
+Finding 2 is RESOLVED by Human Choice A (role/tool-routing alignment). Finding 3's minimal home is created (see its Status); any further `department_templates/` template/manifest/generator/automation expansion, or any `core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md` template edit, requires fresh Human Review. Finding 1 and the README role / Bootstrap-Status items may be actioned only via separate Human-approved tasks.
 
 Export note:
 Keep this item internal-only. Do not include it in external packages, friends training packages, department exports, or sanitized `AI_MISSION/` exports unless Human explicitly approves.
