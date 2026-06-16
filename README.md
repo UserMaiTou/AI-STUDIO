@@ -25,8 +25,10 @@ AI-STUDIO is not:
 ## Repository Structure
 
 ```text
+.claude/
 core/
 mission_packs/
+tools/
 AGENTS.md
 README.md
 .gitignore
@@ -41,6 +43,7 @@ Core contains project-neutral operating protocols:
 - Session protocol
 - Task template
 - Parking Lot
+- Department pack export protocol
 
 ## v1.1 Core Focus
 
