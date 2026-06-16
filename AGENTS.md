@@ -58,13 +58,27 @@ These boundaries guide AI-STUDIO collaboration unless Human explicitly assigns a
 
 | Role | Primary boundary |
 |---|---|
-| Codex | Task breakdown, repository state, objective validation, review, handoff, and commit recommendation. |
-| Cursor | Implementation execution for code, configuration, assets, and batch file processing. |
-| Claude | Read-only deep review, architecture analysis, risk analysis, and second opinion. |
+| Claude | Primary daily repo execution interface and project lead, via scoped subagents (implementation, read-only review, boundary checking, risk review). Executor, not final Reviewer. |
+| Codex | Advisory / second-opinion only: task breakdown input, repository-state sanity, and commit recommendation. |
+| Cursor | Implementation execution for code, configuration, assets, and batch file processing, when assigned. |
 | ChatGPT | Human Director decision support, direction judgment, and strategy discussion. |
 | Human Director | Subjective judgment, direction, final authorization, protected decisions, commit approval, push approval, and release approval. |
 
 No role may use its tool preference to expand scope, skip validation, or bypass Human Final Decision.
+
+Even as primary execution interface, Claude remains Executor, not final Reviewer, for repository-shaping changes (see `Executor Is Not Reviewer`). Commit, push, export, and Core-protocol changes remain Human-gated.
+
+## Human-Facing Language Policy
+
+The Human Director is Chinese-speaking. Reports, explanations, review summaries, planning conclusions, and operational guidance intended for the Human Director should default to Chinese (中文) when possible.
+
+Do not translate when it would reduce precision: code identifiers, filenames, paths, command output, status enums (`GREEN`/`YELLOW`/`RED`, gate names), commit hashes, tool names, or protocol keywords stay in their original form.
+
+Commit messages remain English conventional commits unless Human explicitly requests Chinese.
+
+Governance docs and agent config stay structurally clean and technical; use bilingual wording only where it improves clarity.
+
+Never sacrifice project stability, cleanliness, consistency, or executable precision merely to make text Chinese. If Chinese-only wording would be ambiguous, give the Chinese explanation plus the original English term, e.g. 边界检查（boundary-checker）.
 
 ## Mission Pack Is Delivery Package, Not Core
 

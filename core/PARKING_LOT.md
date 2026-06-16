@@ -282,39 +282,40 @@ Keep this item internal-only. Do not include it in external packages, department
 
 ### PL-0009 - Claude-centered workflow migration
 
-Status: Parked
+Status: Approved for staged minimal bootstrap (Phase 2G, Pass 1)
 
 Priority: P2
 
 Reason:
 A Phase 2F0 read-only planning review considered shifting AI-STUDIO from the current multi-tool workflow (ChatGPT direction, Codex execution/records, Cursor implementation, Claude read-only review) toward a Claude-centered workflow where Claude Code becomes the primary daily repo interface / project lead with subagents for implementation, review, boundary checking, docs consistency, and risk review.
 
-This overlaps existing parked items and must not be implemented now:
+This overlaps existing parked items:
 
-- It is substantially the AI-Operated Department Model already parked as PL-0006.
-- It extends the Agent OS direction intentionally excluded by PL-0001.
-- It depends on the unresolved department source-of-truth / generation path noted in PL-0008.
+- It is substantially the AI-Operated Department Model parked as PL-0006.
+- It extends the Agent OS direction noted in PL-0001.
+- It relates to the unresolved department source-of-truth / generation path noted in PL-0008.
 
-Not approved:
-Claude-centered workflow migration is not approved for implementation.
+Human approval (Phase 2G):
+The Human Director approved starting a staged Claude-centered multi-agent workflow. Codex moves to advisory / second-opinion only. Claude Code becomes the primary daily repo execution interface. This approval is for a minimal staged bootstrap, not unlimited automation.
 
-This item records the discussion only. It does not authorize role changes, new directories, new tools, or any automated commit/push workflow.
+Gate override record:
+This approval consciously overrides PL-0009 Gate 1 (resolve Phase 2F / PL-0008 first) and Gate 2 (PL-0006 real-project return evidence) for the minimal staged bootstrap only. Those gates were written to prevent premature org-model commitment; the override is a Human Final Decision and is recorded here rather than left to contradict the file. Phase 2F / PL-0008 canonical-home work remains open and independent.
 
-Out of scope until explicit Human Review:
+Pass 1 scope (approved):
 
-- creating `.claude/` or `.claude/agents`
-- creating or modifying Claude settings
-- editing role-routing content in `AGENTS.md` or `core/TOOL_ROUTING.md`
-- editing exported role-routing content in department packs
+- create three Claude Code subagents under `.claude/agents/`: `repo-reviewer` (read-only), `boundary-checker` (read-only), and `implementer` (scoped write, no git authority)
+- update the role boundaries in `AGENTS.md` and `core/TOOL_ROUTING.md` (Codex advisory; Claude primary execution; Executor != Reviewer preserved)
+- add a Human-Facing Language Policy to `AGENTS.md` with a pointer from `core/TOOL_ROUTING.md`
 
-Gates:
+Still out of scope until further explicit Human Review:
 
-1. Resolve Phase 2F / PL-0008 canonical home for department core / `START_HERE.md` first.
-2. Meet the PL-0006 real-project return-evidence gate (reskin project #1 and R&D project #1 completed and returned with `AI_MISSION/`) before any AI-operated department model or Claude-centered workflow migration.
-3. No `.claude/agents`, Claude settings, role-routing edits, or export-role edits until explicit Human Review.
+- Claude settings, hooks, Agent Teams config, templates, generator, manifest, or zip
+- editing exported role-routing content in department packs or `core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md`
+- any automated commit / push / export workflow
+- full automation beyond the staged bootstrap
 
 Disposition:
-Human Final Decision remains the highest authority. Git and the Human Gate remain hard sources of truth. Commit, push, and export-package changes remain Human-approved.
+Human Final Decision remains the highest authority. Git and the Human Gate remain hard sources of truth. Commit, push, and export-package changes remain Human-approved. Commit and push for Pass 1 itself remain pending Human approval.
 
 Export note:
 Keep this item internal-only. Do not include it in external packages, friends training packages, department exports, or sanitized `AI_MISSION/` exports unless Human explicitly approves.

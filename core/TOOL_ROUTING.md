@@ -36,13 +36,15 @@ These boundaries guide routing unless Human explicitly assigns a different role 
 
 | Role | Boundary |
 |---|---|
-| Codex | Task breakdown, repository state, objective validation, review, handoff, and commit recommendation. |
-| Cursor | Implementation execution for code, configuration, assets, and batch file processing. |
-| Claude | Read-only deep review, architecture analysis, risk analysis, and second opinion. |
+| Claude | Primary daily repo execution interface and project lead, via scoped subagents (implementation, read-only review, boundary checking, risk review). Executor, not final Reviewer. |
+| Codex | Advisory / second-opinion only: task breakdown input, repository-state sanity, and commit recommendation. |
+| Cursor | Implementation execution for code, configuration, assets, and batch file processing, when assigned. |
 | ChatGPT | Human Director decision support, direction judgment, and strategy discussion. |
 | Human Director | Subjective judgment, direction, final authorization, protected decisions, commit approval, push approval, and release approval. |
 
 Role boundaries do not authorize scope expansion, skipped validation, or protected decisions.
+
+Human-facing output language follows the `AGENTS.md` Human-Facing Language Policy.
 
 ## Routing Tendencies
 
@@ -50,14 +52,14 @@ These are tendencies, not permanent roles.
 
 | Work Type | Likely Executor | Likely Reviewer |
 |---|---|---|
-| Governance documentation | Codex | Human or ChatGPT |
-| Mission Pack creation | Codex | Human or ChatGPT |
-| Mission Pack review | ChatGPT or Codex | Human |
-| Tool routing design | ChatGPT or Codex | Human |
-| Benchmarking and comparison | ChatGPT or Codex | Human |
-| Project execution planning | Codex | Human |
-| Retrospective analysis | ChatGPT or Codex | Human |
-| Repository hygiene | Codex | Human |
+| Governance documentation | Claude | Human or ChatGPT |
+| Mission Pack creation | Claude | Human or ChatGPT |
+| Mission Pack review | Claude or ChatGPT | Human |
+| Tool routing design | Claude or ChatGPT | Human |
+| Benchmarking and comparison | Claude or ChatGPT | Human |
+| Project execution planning | Claude | Human |
+| Retrospective analysis | Claude or ChatGPT | Human |
+| Repository hygiene | Claude | Human |
 
 Use the smallest tool chain that protects quality, scope, and reviewability.
 
