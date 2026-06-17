@@ -437,3 +437,26 @@ Export note:
 Keep this item internal-only. Do not include it in external packages, friends
 training packages, department exports, or sanitized `AI_MISSION/` exports unless
 Human explicitly approves.
+
+### PL-0012 - Token Economy / Lightweight Mode (closure record)
+
+Status: Implemented / Closed
+
+Priority: P2
+
+Record:
+A Token Economy / Lightweight Mode task-tiering rule was added to canonical session
+protocol: `S0/S1/S2/S3` tiers, default to the lowest viable tier with no
+auto-escalation, stop-and-ask on budget / scope / Human-decision, and no multi-agent
+audit or exhaustive scan for small tasks. It lives in `core/SESSION_PROTOCOL.md` and
+the department-facing `department_templates/AI_MISSION/core/SESSION_PROTOCOL.md`, and
+was synced into both deployed packs' `AI_MISSION/core/SESSION_PROTOCOL.md`
+(`D:\AI\研发部`, `D:\AI\换皮部`). Goal: stop small tasks from triggering multi-agent
+audit / exhaustive scan / long handoff. Deployed packs are plain folders (no git); the
+repo commit is the canonical record.
+
+Export note:
+This closure record is internal-only; the rule itself is department-facing and
+intentionally ships in packs. Do not include this record in external packages, friend
+packages, department exports, or sanitized `AI_MISSION/` exports unless Human
+explicitly approves.

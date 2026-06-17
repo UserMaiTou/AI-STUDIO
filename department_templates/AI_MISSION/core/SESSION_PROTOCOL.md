@@ -94,6 +94,25 @@ Use these session states:
 
 When the state is `RED`, the agent must stop task expansion and produce a handoff package.
 
+## Task Tiering and Lightweight Mode (Token Economy)
+
+Match process weight to task risk. Start at the lowest viable tier and do not auto-escalate; escalate only when real risk or a Human decision point appears.
+
+| Tier | Task kind | Default handling |
+|---|---|---|
+| `S0` | Quick answer: ordinary Q&A, translation, a small explanation. | Answer directly. Do not read the repo, run the protocol, spawn agents, or write a handoff. |
+| `S1` | Lightweight record / small doc edit: a small change to 1-3 clearly identified files. | Read only the relevant files. No subagents, no exhaustive audit, no full handoff. Apply the change and give a short final summary. |
+| `S2` | Normal task: a medium change. | May read the necessary core protocols and related templates. One review pass is allowed. No multi-agent audit unless real risk appears. |
+| `S3` | High-risk / release / export: department-pack export, template-structure change, release, `git` commit/push, or authority/boundary change. | Full protocol: Executor/Reviewer separation, read-only review and boundary checking, and a handoff. |
+
+Rules:
+
+- Default to the lowest tier that can safely complete the task; do not escalate on your own.
+- Stop and ask the Human first when the task would exceed a reasonable token/time budget, needs scope expansion, or reaches a Human decision point.
+- Do not split a simple task into multiple rounds of diff / review / commit questions; complete it in one pass within the already-authorized boundary.
+- Multi-agent audit, adversarial verification, and exhaustive scans are `S3` tools, not defaults for `S0`/`S1`/`S2`.
+- Tiering never overrides Human Final Decision, Git safety, or protected-decision gates.
+
 ## STOP_AND_HANDOFF Triggers
 
 The agent must `STOP_AND_HANDOFF` when any of the following occurs:
