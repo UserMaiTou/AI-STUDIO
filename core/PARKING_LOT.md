@@ -369,3 +369,69 @@ Findings 1, 2, and 4 are RESOLVED: role/tool-routing alignment (Choice A) and th
 
 Export note:
 Keep this item internal-only. Do not include it in external packages, friends training packages, department exports, or sanitized `AI_MISSION/` exports unless Human explicitly approves.
+
+### PL-0011 - Git-backed Agent Review Ledger
+
+Status: Parked
+
+Priority: P2
+
+Reason:
+Recent work observed a useful asynchronous collaboration pattern where Claude Code
+and Codex can leave review notes across a Git-backed boundary:
+
+- Claude implements and writes review context.
+- Codex reviews and writes risk notes.
+- Claude fixes and writes done notes.
+- Human Director makes the final decision.
+
+This may be valuable as a future enhancement for high-risk coding tasks, but it
+is not required for the current department trial.
+
+AI-STUDIO judgment:
+
+- Useful future capability for tasks where Executor and Reviewer should be
+  strongly separated.
+- Not a blocker for `D:\AI\研发部` or `D:\AI\换皮部` department trial readiness.
+- Does not approve implementing Git ref tooling now.
+- Does not replace `PROJECT_AI_FEEDBACK.md`, `PROJECT_COMPLETION_PACKAGE.md`, or
+  Human Final Decision.
+- Does not introduce hidden Git refs as a default mechanism for department users.
+
+Suggested future route:
+
+Phase 1:
+Absorb the idea only: Executor != Reviewer; one agent writes, another reviews,
+and Human Director makes the final decision.
+
+Phase 2:
+If trial feedback shows a real need, start with visible Markdown records, such
+as `PROJECT_AGENT_REVIEW_LOG.md`, before considering hidden or tool-backed
+channels.
+
+Phase 3:
+Only if there is demonstrated need, consider `tools/agent_ledger/chat.ps1`,
+`tools/agent_ledger/send.ps1`, or a Git ref ledger.
+
+Applicable scenarios:
+
+- high-risk code changes
+- actions involving money, data deletion, accounts, SDKs, release, signing,
+  privacy, advertising, or similar protected areas
+- tasks where Claude self-review risk is high and Codex or another independent
+  reviewer should inspect from a different angle
+
+Not applicable:
+
+- copywriting, formatting, or small template edits
+- first-round department trial blockers
+- default mechanisms for friend packages, department exports, or field teams
+
+Gate:
+Revisit only after department trial feedback or a real high-risk coding task
+shows that normal visible records are insufficient.
+
+Export note:
+Keep this item internal-only. Do not include it in external packages, friends
+training packages, department exports, or sanitized `AI_MISSION/` exports unless
+Human explicitly approves.
