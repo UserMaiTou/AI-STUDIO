@@ -18,6 +18,7 @@ At export time, the package must contain:
 README.md
 AI_MISSION/
   START_HERE.md
+  使用说明.md
   AGENTS.md
   README.md
   PROJECT_CONTEXT.md
@@ -134,7 +135,7 @@ manifest.
 Directionality of the standard `AI_MISSION/` surfaces:
 
 - `canonical -> export` from `department_templates/AI_MISSION/`: `START_HERE.md`,
-  `core/AI_ROLE_ROUTING.md`, `core/SESSION_PROTOCOL.md` (a department-facing
+  `使用说明.md`, `core/AI_ROLE_ROUTING.md`, `core/SESSION_PROTOCOL.md` (a department-facing
   template — a controlled derivation of the repo's own `core/SESSION_PROTOCOL.md`,
   distinct from and not a replacement for it), and the eight `PROJECT_*` records.
 - `canonical -> export` from AI-STUDIO `core/` / root at export time (not stored in

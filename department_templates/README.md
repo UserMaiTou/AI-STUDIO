@@ -48,6 +48,11 @@ duplicated here:
 - `AI_MISSION/START_HERE.md` — canonical, department-neutral entry template with a
   Claude-primary launch flow and `<DepartmentName>` / `<ProjectKind>` /
   `<MissionPack_v1>` placeholders.
+- `AI_MISSION/使用说明.md` — canonical, department-neutral plain-language USER guide
+  (Chinese) for ordinary department staff: how to use the pack, the simple
+  ChatGPT/Claude/Codex/Cursor split, a copy-paste Claude opening prompt + task-pack
+  template, when Claude finishes in one pass vs stops to ask, and how to report back.
+  Same `<DepartmentName>` / `<ProjectKind>` / `<MissionPack_v1>` placeholders.
 - `AI_MISSION/PROJECT_CONTEXT.md`, `PROJECT_OBSERVATIONS.md`,
   `PROJECT_DECISIONS.md`, `PROJECT_ISSUES.md`, `PROJECT_ARTIFACTS.md`,
   `PROJECT_TIMELINE.md`, `PROJECT_AI_FEEDBACK.md`, `PROJECT_COMPLETION_PACKAGE.md`
