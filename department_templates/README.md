@@ -88,11 +88,20 @@ protocol's Source Map (`core/DEPARTMENT_PACK_EXPORT_PROTOCOL.md`) classifies the
 as `canonical -> export`; no department-pack surface remains
 `department-authored / no canonical source yet`.
 
-## Field-pack reconciliation (next Human-approved export only)
+## Field-pack reconciliation
 
-Deployed field packs (e.g. `D:\AI\研发部`, `D:\AI\换皮部`) still carry pre-alignment
-content. Do NOT edit deployed packs directly. At each pack's next Human-approved
-export, regenerate from these canonical templates:
+Status (2026-06-18, TASK-STUDIO-TRIAL-0001B): the two deployed packs `D:\AI\研发部`
+(GameRND_v1) and `D:\AI\换皮部` (Reskin_v1) have had their four role/tool surfaces
+(`core/AI_ROLE_ROUTING.md`, `AGENTS.md`, `START_HERE.md`, `core/TOOL_ROUTING.md`)
+reconciled to the post-2G Claude-primary model — regenerated **in place** under explicit
+Human approval and verified `READY_FOR_DEPARTMENT_TRIAL`. Only `换皮部`
+`core/PROJECT_HANDOFF.md` remains outstanding (deliberately deferred, role-neutral
+structural divergence). See `core/PARKING_LOT.md` PL-0010.
+
+The procedure below remains canonical for any NEW or not-yet-reconciled pack and for each
+pack's next clean export. Default rule: do NOT edit deployed packs directly; regenerate
+from these canonical templates (the 2026-06-18 in-place regen above was a separately
+Human-approved exception, not the standard path):
 
 1. `core/AI_ROLE_ROUTING.md` and `AGENTS.md` — realign from pre-2G
    (ChatGPT main brain / Codex orchestration / Cursor heavy execution / Claude
