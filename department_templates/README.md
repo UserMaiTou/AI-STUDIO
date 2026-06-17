@@ -25,8 +25,8 @@ This directory holds canonical templates ONLY for department-pack surfaces that
 have no other canonical source. Files that already have a canonical home are NOT
 duplicated here:
 
-- `core/TOOL_ROUTING.md` and `core/PROJECT_HANDOFF.md` are copied from the
-  AI-STUDIO canonical `core/` at export time, not stored here.
+- `core/TOOL_ROUTING.md`, `core/PROJECT_HANDOFF.md`, and `core/TASK_TEMPLATE.md` are
+  copied from the AI-STUDIO canonical `core/` at export time, not stored here.
 - `core/SESSION_PROTOCOL.md` (the AI-STUDIO repo's own session protocol) is **not**
   stored here and is not replaced. The department-facing session protocol is a
   **separate exported-surface template** at `AI_MISSION/core/SESSION_PROTOCOL.md`

@@ -33,6 +33,7 @@ AI_MISSION/
     TOOL_ROUTING.md
     SESSION_PROTOCOL.md
     PROJECT_HANDOFF.md
+    TASK_TEMPLATE.md
   <MissionPack_v1>/
     MISSION.md
     README.md
@@ -137,8 +138,8 @@ Directionality of the standard `AI_MISSION/` surfaces:
   template — a controlled derivation of the repo's own `core/SESSION_PROTOCOL.md`,
   distinct from and not a replacement for it), and the eight `PROJECT_*` records.
 - `canonical -> export` from AI-STUDIO `core/` / root at export time (not stored in
-  `department_templates/`): `core/TOOL_ROUTING.md`, `core/PROJECT_HANDOFF.md`, and
-  the department-adapted `AGENTS.md`.
+  `department_templates/`): `core/TOOL_ROUTING.md`, `core/PROJECT_HANDOFF.md`,
+  `core/TASK_TEMPLATE.md`, and the department-adapted `AGENTS.md`.
 - No standard `AI_MISSION/` surface remains `department-authored / no canonical
   source yet`. A filled `PROJECT_*` record in a delivered pack is a field copy and
   is `bidirectional-needs-review` for any returned change.
